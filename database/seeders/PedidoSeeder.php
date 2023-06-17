@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Pedido;
+use Faker\factory as faker;
+
 class PedidoSeeder extends Seeder
 {
     /**

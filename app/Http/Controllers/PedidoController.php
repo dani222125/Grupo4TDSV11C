@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pedido;
+use App\Models\Cliente;
 
 class PedidoController extends Controller
 {
@@ -14,7 +16,7 @@ class PedidoController extends Controller
 
     public function create()
     {
-        $clientes = Clientes::all();
+        $clientes = Cliente::all();
         return view('pedidos.create', compact('clientes'));
     }
 
@@ -38,7 +40,7 @@ class PedidoController extends Controller
     public function edit($id)
     {
         $pedido = Pedido::findOrFail($id);
-        $clientes = Clientes::all();
+        $clientes = Cliente::all();
         return view('pedidos.edit', compact('pedido', 'clientes'));
     }
 

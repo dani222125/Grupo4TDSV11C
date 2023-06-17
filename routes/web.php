@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $nombres = 'Erikson Alexander García Polanco -- Daniela Alejandra Sanabria Perez -- Mario Eduardo Amaya Martinez -- Carlos Eduardo Barrera Baires';
+    $nombres = 'Erikson Alexander García Polanco \n Daniela Alejandra Sanabria Perez \n Mario Eduardo Amaya Martinez \n Carlos Eduardo Barrera Baires';
     $grupo = ' TDSV11C';
     return view('Inicio', compact('nombres', 'grupo'));
 });
 
 //CRUD Clientes
-Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');;
+Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
 Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clientes.create');
 Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.store');
 Route::get('/clientes/{id}', [ClienteController::class, 'show']);
@@ -41,14 +41,6 @@ Route::get('/pedidos/{id}', [PedidoController::class, 'show'])->name('pedidos.sh
 Route::get('/pedidos/{id}/edit', [PedidoController::class, 'edit'])->name('pedidos.edit');
 Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
 Route::delete('/pedidos/{id}', [PedidoController::class, 'destroy'])->name('pedidos.destroy');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

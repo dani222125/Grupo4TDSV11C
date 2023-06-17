@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Cliente;
+use Faker\Factory as faker;
 class ClienteSeeder extends Seeder
 {
     /**
@@ -13,6 +14,7 @@ class ClienteSeeder extends Seeder
     public function run(): void
     {
         for ($i = 1; $i <= 12; $i++) {
+            Cliente::create
             ([
                 'nombre' => 'Cliente '.$i,
                 'apellido' => 'Apellido '.$i,
