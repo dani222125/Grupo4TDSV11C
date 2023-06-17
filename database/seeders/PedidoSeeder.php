@@ -12,6 +12,7 @@ class PedidoSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = Faker::create();
         for ($i = 0; $i < 12; $i++) {
             Pedido::create([
                 'fecha_pedido' => $faker->dateTimeBetween('-1 year', 'now'),
