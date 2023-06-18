@@ -57,7 +57,22 @@ class ClienteController extends Controller
     {
         $clientes = Cliente::find($id);
         $clientes->delete();
+        dd($clientes);
+
 
         return redirect()->route('clientes.index')->with('success', 'Cliente eliminado exitosamente');
+    }
+
+    public function pdf($id_cliente){
+        $cliente = Cliente::find($id_cliente);
+        $pedidos = $cliente->cantPedidos;
+        // if ($pedidos -> $count === 0){
+        //     return redirect() -> route('clientes.index')->with('', 'No se encontró ningun pedido');
+        // }
+        // else{
+        //     return redirect() -> route('clientes.print')->with('success', 'Se encontraron pedidos');
+        // }
+        //dd($pedidos);
+        return view('clientes.print',compact('pedidos','cliente'));
     }
 }

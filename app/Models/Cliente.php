@@ -11,4 +11,8 @@ class Cliente extends Model
     protected $primaryKey = 'id_cliente';
     protected $fillable =['nombre','apellido','fecha_nac'];
     use HasFactory;
+
+    public function cantPedidos(){
+        return $this->hasMany(Pedido::class, 'id_cliente', 'id_cliente');
+    }
 }

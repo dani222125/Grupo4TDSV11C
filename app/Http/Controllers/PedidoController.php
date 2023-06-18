@@ -61,4 +61,9 @@ class PedidoController extends Controller
         $pedido->delete();
         return redirect()->route('pedidos.index')->with('success', 'El pedido ha sido eliminado exitosamente.');
     }
+
+
+    public function ListarPedidos($request){
+
+    }
 }

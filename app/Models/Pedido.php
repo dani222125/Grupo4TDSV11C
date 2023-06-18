@@ -9,7 +9,7 @@ use faker\Factory as faker;
 class Pedido extends Model
 {
     protected $table = 'pedidos';
-    protected $primaryKey = 'id_pedido';
+    protected $primaryKey = 'id';
     protected $fillable=['fecha_pedido',
                         'fecha_entrega',
                         'observaciones',
@@ -18,7 +18,8 @@ class Pedido extends Model
 
     public function clientes ()
     {
-        return $this->belongsTo(Cliente::class);
+        return $this->belongsTo(Cliente::class, 'id_cliente', 'id_cliente');
 
     }
+
 }
